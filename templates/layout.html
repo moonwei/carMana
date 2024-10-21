@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}智慧相机管理系统{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">智慧相机管理系统</a>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="{{ url_for('camera.list_cameras') }}">相机管理</a>
+            <a class="nav-item nav-link" href="{{ url_for('whitelist.list_whitelist') }}">白名单管理</a>
+            <a class="nav-item nav-link" href="{{ url_for('recognition.list_recognitions') }}">车牌识别记录</a>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

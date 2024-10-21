@@ -1,0 +1,18 @@
+{% extends "layout.html" %} {% block title %}添加白名单{% endblock %} {% block content %}
+<h1>添加新白名单</h1>
+<form method="POST">
+    <div class="form-group">
+        <label for="plate_number">车牌号</label>
+        <input type="text" class="form-control" id="plate_number" name="plate_number" required>
+    </div>
+    <div class="form-group">
+        <label for="start_time">开始时间</label>
+        <input type="datetime-local" class="form-control" id="start_time" name="start_time">
+    </div>
+    <div class="form-group">
+        <label for="end_time">结束时间</label>
+        <input type="datetime-local" class="form-control" id="end_time" name="end_time">
+    </div>
+    <button type="submit" class="btn btn-primary">添加</button>
+</form>
+{% endblock %}

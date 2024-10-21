@@ -1,0 +1,30 @@
+{% extends "layout.html" %} {% block title %}添加相机{% endblock %} {% block content %}
+<h1>添加新相机</h1>
+<form method="POST">
+    <div class="form-group">
+        <label for="name">相机名称</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="serial_number">序列号</label>
+        <input type="text" class="form-control" id="serial_number" name="serial_number" required>
+    </div>
+    <div class="form-group">
+        <label for="location">位置</label>
+        <input type="text" class="form-control" id="location" name="location">
+    </div>
+    <div class="form-group">
+        <label for="ip_address">IP地址</label>
+        <input type="text" class="form-control" id="ip_address" name="ip_address">
+    </div>
+    <div class="form-group">
+        <label for="username">用户名</label>
+        <input type="text" class="form-control" id="username" name="username">
+    </div>
+    <div class="form-group">
+        <label for="password">密码</label>
+        <input type="password" class="form-control" id="password" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary">添加</button>
+</form>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %} {% block title %}白名单管理{% endblock %} {% block content %}
+<h1>白名单管理</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>车牌号</th>
+            <th>开始时间</th>
+            <th>结束时间</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in whitelist %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.plate_number }}</td>
+            <td>{{ item.start_time }}</td>
+            <td>{{ item.end_time }}</td>
+            <td>
+                <a href="{{ url_for('whitelist.edit_whitelist', whitelist_id=item.id) }}" class="btn btn-sm btn-primary">编辑</a>
+                <form action="{{ url_for('whitelist.delete_whitelist', whitelist_id=item.id) }}" method="post" style="display: inline;">
+                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('确定要删除这个白名单项吗？')">删除</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('whitelist.add_whitelist') }}" class="btn btn-success">添加新白名单</a> {% endblock %}
